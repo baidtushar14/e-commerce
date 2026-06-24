@@ -1,0 +1,39 @@
+@use "./variables" as *;
+
+@mixin mobile {
+  @media (max-width: $bp-mobile) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: ($bp-mobile + 1px)) {
+    @content;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $space-5;
+
+  @include mobile {
+    padding: 0 $space-4;
+  }
+}
+
+@mixin button-reset {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+@mixin focus-ring {
+  outline: 2px solid $color-ink;
+  outline-offset: 2px;
+}

@@ -1,0 +1,81 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.page {
+  @include container;
+  padding-top: $space-7;
+  padding-bottom: $space-8;
+}
+
+.hero {
+  max-width: 720px;
+  margin: 0 auto $space-7;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 $space-3;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $color-ink-muted;
+}
+
+.heading {
+  margin: 0 0 $space-3;
+}
+
+.lede {
+  margin: 0;
+  color: $color-ink-muted;
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-6 $space-5;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-5 $space-3;
+  }
+}
+
+.skeleton {
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(
+    100deg,
+    rgba(0, 0, 0, 0.04) 30%,
+    rgba(0, 0, 0, 0.08) 50%,
+    rgba(0, 0, 0, 0.04) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: $radius-md;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.errorBox {
+  text-align: center;
+  padding: $space-7;
+  border: 1px dashed $color-line-strong;
+  border-radius: $radius-md;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+  align-items: center;
+}

@@ -1,0 +1,38 @@
+@use "../styles/variables" as *;
+
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid $color-line-strong;
+  border-radius: $radius-md;
+  overflow: hidden;
+  background: $color-surface;
+}
+
+.btn {
+  width: 40px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  color: $color-ink;
+  transition: background $dur-fast $ease;
+
+  &:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  &:disabled {
+    color: $color-ink-muted;
+    cursor: not-allowed;
+  }
+}
+
+.value {
+  min-width: 40px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  font-weight: 500;
+}
