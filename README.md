@@ -6,7 +6,7 @@ from the [Fake Store API](https://fakestoreapi.com), cart persisted in `localSto
 
 ## Live URL
 
-> Deploy to Vercel/Netlify and paste the URL here.
+(https://e-commerce-lake-five-79.vercel.app/)
 
 ## Setup
 
